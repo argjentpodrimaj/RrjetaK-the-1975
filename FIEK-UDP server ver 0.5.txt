@@ -1,0 +1,41 @@
+from socket import *
+import random
+portS=12001
+port=12002
+
+ServerSocket = socket(AF_INET, SOCK_DGRAM)
+ServerSocket.bind(('', portS))
+
+print('jemi online')
+
+def faktoriel(x):
+    k=1;
+    for i in range(1, x+1):
+        k=k*i;
+    return k  
+    
+while True:    
+    message,addr = ServerSocket.recvfrom(1024)
+    print "Request:", message
+    message=message.split(' ')
+    response=""  
+    if (message[0]=="IP"):
+        print(" #Kodi per IP ")
+    #. qitu i shton tjerat
+
+    #.
+
+    #.    
+    if (message[0]=="KENO"):
+        response="Numrat e rastesishem 1-80: "
+        for i in range(0, 20):
+            x= random.randint(1,80)
+            response= response+" "+str(x)  
+    if (message[0]=="FAKTORIEL"):
+        fakt=1
+        for i in range(1, int(message[1])+1):
+            fakt=fakt*i;
+        response = "Faktorieli i numrit "+message[1]+" eshte "+str(fakt)
+
+
+    ServerSocket.sendto(response,("localhost",port))
