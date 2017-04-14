@@ -12,3 +12,11 @@ Argjend:
   Server
   Zanore
   Time
+
+Adriatik+Kaltrina:
+  Ip
+  Port
+  Printo
+  host
+  Konverto
+  
