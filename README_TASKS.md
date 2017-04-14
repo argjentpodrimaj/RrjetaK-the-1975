@@ -17,6 +17,6 @@ Adriatik+Kaltrina:
   Ip
   Port
   Printo
-  host
+  Host
   Konverto
   
