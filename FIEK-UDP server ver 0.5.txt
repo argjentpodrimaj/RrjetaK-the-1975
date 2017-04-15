@@ -33,9 +33,14 @@ while True:
             response= response+" "+str(x)  
     if (message[0]=="FAKTORIEL"):
         fakt=1
-        for i in range(1, int(message[1])+1):
-            fakt=fakt*i;
-        response = "Faktorieli i numrit "+message[1]+" eshte "+str(fakt)
+        try:
+            int(message[1])
+            for i in range(1, int(message[1])+1):
+                fakt=fakt*i
+            response = "Faktorieli i numrit "+str(message[1])+" eshte "+str(fakt)
+            
+        except ValueError:
+            response= "Gabim ne formatin e Request"
 
 
     ServerSocket.sendto(response,("localhost",port))
