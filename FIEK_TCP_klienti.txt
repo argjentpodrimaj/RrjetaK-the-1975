@@ -1,18 +1,15 @@
 from socket import *
 
-port=12002
+port=12003
 portS=9000
 Ip="localhost"
-
-ClientSocket = socket(AF_INET, SOCK_STREAM)
-ClientSocket.connect((Ip,portS))
 
 def ip():
     message = "IP "
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -23,7 +20,7 @@ def port():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -34,7 +31,7 @@ def zanore():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -45,7 +42,7 @@ def printo():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -56,7 +53,7 @@ def host():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -67,7 +64,7 @@ def time():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -78,7 +75,7 @@ def keno():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -91,7 +88,7 @@ def faktoriel():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(4096)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -102,7 +99,7 @@ def konverto():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -113,7 +110,7 @@ def M1():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -124,7 +121,73 @@ def M2():
     #message = message.encode("UTF-8")
     ClientSocket.send(message) 
     try:
-        response,addr = ClientSocket.recv(1024)
+        response = ClientSocket.recv(1024)
+        print response
+    except:
+        print "Error: Serveri nuk ka kthyer pergjigje"
+    menu()
+
+def M3():
+    message = "M3 "
+    #message = message.encode("UTF-8")
+    ClientSocket.send(message) 
+    try:
+        response = ClientSocket.recv(1024)
+        print response
+    except:
+        print "Error: Serveri nuk ka kthyer pergjigje"
+    menu()
+
+def M4():
+    message = "M4 "
+    #message = message.encode("UTF-8")
+    ClientSocket.send(message) 
+    try:
+        response = ClientSocket.recv(1024)
+        print response
+    except:
+        print "Error: Serveri nuk ka kthyer pergjigje"
+    menu()
+
+def M5():
+    message = "M5 "
+    #message = message.encode("UTF-8")
+    ClientSocket.send(message) 
+    try:
+        response = ClientSocket.recv(1024)
+        print response
+    except:
+        print "Error: Serveri nuk ka kthyer pergjigje"
+    menu()
+
+def M6():
+    message = "M6 "
+    #message = message.encode("UTF-8")
+    ClientSocket.send(message) 
+    try:
+        response = ClientSocket.recv(1024)
+        print response
+    except:
+        print "Error: Serveri nuk ka kthyer pergjigje"
+    menu()
+
+def M7():
+    message = "M7 "
+    #message = message.encode("UTF-8")
+    ClientSocket.send(message) 
+    try:
+        response = ClientSocket.recv(1024)
+        print response
+    except:
+        print "Error: Serveri nuk ka kthyer pergjigje"
+    menu()
+
+def M8():
+    message = "M8 "
+    #message = message.encode("UTF-8")
+    ClientSocket.send(message) 
+    try:
+        response = ClientSocket.recv(1024)
         print response
     except:
         print "Error: Serveri nuk ka kthyer pergjigje"
@@ -132,14 +195,14 @@ def M2():
 
 def end():
     ClientSocket.close()
-    exit();
+    exit()
     
 def freestyle():
     message = raw_input("Request: ")
     #message = message.encode("UTF-8")
     ClientSocket.sendto(message,(Ip,portS)) 
     try:
-        response,addr = ClientSocket.recvfrom(1024)
+        response = ClientSocket.recvfrom(1024)
         print response
     except:
         print "Error: Serveri nu ka kthyer pergjigje"
@@ -147,58 +210,104 @@ def freestyle():
 
 
 
+
 def menu():
     print (" ")
-    print("-------------Options--------------")
-    print("1.IP")
-    print("2.PORT")
-    print("3.ZANORE")
-    print("4.PRINTO")
-    print("5.HOST")
-    print("6.TIME")
-    print("7.KENO")
-    print("8.FAKTORIEL")
-    print("9.KONVERTO")
-    print("10.M1")
-    print("11.M2")
-    print("12.EXIT")
-    print("13.FREESTYLE")
+    print("---------------------------")
+    print("1.OPTIONS")
+    print("2.EXIT")
     option = raw_input('Zgjedh opt Numer: ')
-    
     if(option == '1'):
-        ip()
+        print (" ")
+        print("-------------Options--------------")
+        print("1.IP")
+        print("2.PORT")
+        print("3.ZANORE")
+        print("4.PRINTO")
+        print("5.HOST")
+        print("6.TIME")
+        print("7.KENO")
+        print("8.FAKTORIEL")
+        print("9.KONVERTO")
+        print("10.FREESTYLE")
+        print("11.INDIVIDUALE")
+        print("12.EXIT")    
+        option = raw_input('Zgjedh opt Numer: ')
+    
+        if(option == '1'):
+            ip()
+        if(option == '2'):
+            port()
+        if(option == '3'):
+            zanore()
+        if(option == '4'):
+            printo()
+        if(option == '5'):
+            host()
+        if(option == '6'):
+            time()
+        if(option == '7'):
+            keno()
+        if(option == '8'):
+            faktoriel()
+        if(option == '9'):
+            konverto()
+        if(option == '10'):
+            freestyle()
+        if(option == '11'):
+            print("--------------------")
+            print("1.Artan - M1")
+            print("2.Artan - M2")
+            print("3.Argjent - M1")
+            print("4.Argjent - M2")
+            print("5.Adriatik - M1")
+            print("6.Adriatik - M2")
+            print("7.Kaltrina - M1")
+            print("8.Kaltrina - M2")
+            option = raw_input('Zgjedh opt Numer: ')
+            if(option == '1'):
+                M1()
+            if(option == '2'):
+                M2()
+            if(option == '3'):
+                M3()
+            if(option == '4'):
+                M4()
+            if(option == '5'):
+                M5()
+            if(option == '6'):
+                M6()
+            if(option == '7'):
+                M7()
+            if(option == '8'):
+                M8()
+            print "Keni shtypur opsion jovalid"
+            menu()
+        if(option == '12'):
+            end()    
+        print "Keni shtypur opsion jovalid"
+        menu()        
     if(option == '2'):
-        port()
-    if(option == '3'):
-        zanore()
-    if(option == '4'):
-        printo()
-    if(option == '5'):
-        host()
-    if(option == '6'):
-        time()
-    if(option == '7'):
-        keno()
-    if(option == '8'):
-        faktoriel()
-    if(option == '9'):
-        konverto()
-    if(option == '10'):
-        M1()
-    if(option == '11'):
-        M2()
-    if(option == '12'):
         end()
-    if(option == '13'):
-        freestyle()
     print "Keni shtypur opsion jovalid"
     menu()
+    
 
-menu()
+try:
+    ClientSocket = socket(AF_INET, SOCK_STREAM)
+    ClientSocket.connect((Ip,portS))
+    menu()
+except:
+    print("Lidhja me server nuk u realizua")
+        
+    
 
 
 
-ClientSocket.send(response)
 
-response = ClientSocket.recv(1024)
-print response
+
+
+#ClientSocket.send(response)
+
+#response = ClientSocket.recv(1024)
+#print response
