@@ -1,0 +1,61 @@
+from socket import *
+import random
+import thread
+
+port=9000
+
+ServerSocket = socket(AF_INET, SOCK_STREAM)
+ServerSocket.bind(('', port))
+ServerSocket.listen(5)
+print('FIEK-TCP-Server: jemi online')
+
+def Reply(request):
+    message = request.split(' ')
+    response = "  "  
+    if (message[0]=="IP"):
+        print(" #Kodi per IP ")
+    #. qitu i shton tjerat
+
+    #.
+
+    #.    
+    if (message[0]=="KENO"):
+        response="Numrat e rastesishem 1-80: "
+        for i in range(0, 20):
+            x= random.randint(1,80)
+            response= response+" "+str(x)  
+    if (message[0]=="FAKTORIEL"):
+        fakt=1
+        try:
+            int(message[1])
+            for i in range(1, int(message[1])+1):
+                fakt=fakt*i
+            response = "Faktorieli i numrit "+str(message[1])+" eshte "+str(fakt)
+            
+        except ValueError:
+            response= "Gabim ne formatin e Request"
+    return response
+
+def Connection(connSocket,addr):
+    print("start")
+    while 1:
+        try:            
+            request = connSocket.recv(4096)
+            print(request)
+            message=request.split(' ')   
+            response = Reply(request)         
+            connSocket.send(response)
+        except:
+            print("lidhja u nderpre" )
+            connSocket.close()
+            break
+
+
+
+while True:    
+    try:
+        connSocket,addr = ServerSocket.accept()
+        thread.start_new_thread ( Connection, (connSocket,addr) )
+    except:
+        continue
+
