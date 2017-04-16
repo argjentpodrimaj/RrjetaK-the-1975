@@ -136,7 +136,73 @@ def M2():
     except:
         print "Error: Serveri nu ka kthyer pergjigje"
     menu()
+    
+def M3():
+    message = "M3 "
+    #message = message.encode("UTF-8")
+    ClientSocket.sendto(message,(Ip,portS)) 
+    try:
+        response,addr = ClientSocket.recvfrom(1024)
+        print response
+    except:
+        print "Error: Serveri nu ka kthyer pergjigje"
+    menu()
 
+def M4():
+    message = "M5 "
+    #message = message.encode("UTF-8")
+    ClientSocket.sendto(message,(Ip,portS)) 
+    try:
+        response,addr = ClientSocket.recvfrom(1024)
+        print response
+    except:
+        print "Error: Serveri nu ka kthyer pergjigje"
+    menu()
+
+def M5():
+    message = "M5 "
+    #message = message.encode("UTF-8")
+    ClientSocket.sendto(message,(Ip,portS)) 
+    try:
+        response,addr = ClientSocket.recvfrom(1024)
+        print response
+    except:
+        print "Error: Serveri nu ka kthyer pergjigje"
+    menu()
+
+def M6():
+    message = "M6 "
+    #message = message.encode("UTF-8")
+    ClientSocket.sendto(message,(Ip,portS)) 
+    try:
+        response,addr = ClientSocket.recvfrom(1024)
+        print response
+    except:
+        print "Error: Serveri nu ka kthyer pergjigje"
+    menu()
+    
+def M7():
+    message = "M7 "
+    #message = message.encode("UTF-8")
+    ClientSocket.sendto(message,(Ip,portS)) 
+    try:
+        response,addr = ClientSocket.recvfrom(1024)
+        print response
+    except:
+        print "Error: Serveri nu ka kthyer pergjigje"
+    menu()
+
+def M8():
+    message = "M8 "
+    #message = message.encode("UTF-8")
+    ClientSocket.sendto(message,(Ip,portS)) 
+    try:
+        response,addr = ClientSocket.recvfrom(1024)
+        print response
+    except:
+        print "Error: Serveri nu ka kthyer pergjigje"
+    menu()
+    
 def end():
     ClientSocket.close()
     exit();
