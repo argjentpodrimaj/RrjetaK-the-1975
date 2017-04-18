@@ -21,7 +21,19 @@ def Reply(request):
 
     #.
 
-    #.         
+    #.
+    if(message[0]=="ZANORE"):
+        zanoret="AEIOUYaeiouy"
+        nrZan=0
+        message="".join(message)
+        message=list(message)
+        for i in range(0,len(message)):
+            if message[i] in zanoret:
+                nrZan=nrZan+1;
+        nrZan=nrZan-3
+        response="Numri i zanoreve ne tesktin e dhene eshte:"+str(nrZan)                                                                     if (message[0]=="TIME"):
+        now=datetime.datetime.now().strftime("%d.%m.%Y %H:%M:%S %p")
+        response="Koha ne kompjuterin e serverit eshte:"+str(now)
     if (message[0]=="KENO"):
         response="Numrat e rastesishem 1-80: "
         for i in range(0, 20):
@@ -78,6 +90,26 @@ def Reply(request):
         except ValueError:
             response= "Gabim ne formatin e Request"
     return response
+    if  (message[0]=="M3"):
+        message.remove("M3")
+        message=" ".join(message)
+        message1= list(message)
+        message=list(message)
+        for i in range(0,len(message)):
+             message1[len(message)-i-1]=message[i]
+        response ="Reversi i tekstit:" + "".join(message1) 
+            
+    if (message[0]=="M4"):
+        max_num=message[1]
+        min_num=message[1]
+
+        for i in range(1,len(message)):
+            if  message[i]>max_num:
+                max_num=message[i]
+            elif message[i]<min_num:
+                min_num=message[i]
+
+        response="Numri maksimal i listes eshte:"+max_num+"\nNumri minimal i listes eshte:"+min_num
 
 
 def Connection(connSocket,addr):
