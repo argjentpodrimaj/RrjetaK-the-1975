@@ -1,52 +1,355 @@
 from socket import *
 
-port=12003
+port=12004
 portS=9000
 Ip="localhost"
 
-def ip():
+def ip(ClientSocket):
     message = "IP "
-    #message = message.encode("UTF-8")
-    ClientSocket.send(message) 
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
     try:
         response = ClientSocket.recv(1024)
-        print response
+        response = response.decode("UTF-8")
+        print (response)
     except:
-        print "Error: Serveri nuk ka kthyer pergjigje"
-    menu()
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
   
-def port():
+def port(ClientSocket):
     message = "PORT "
-    #message = message.encode("UTF-8")
-    ClientSocket.send(message) 
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
     try:
         response = ClientSocket.recv(1024)
-        print response
+        response = response.decode("UTF-8")
+        print (response)
     except:
-        print "Error: Serveri nuk ka kthyer pergjigje"
-    menu()
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
 
-def zanore():
+def zanore(ClientSocket):
     message = "ZANORE "
-    #message = message.encode("UTF-8")
-    ClientSocket.send(message) 
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
     try:
         response = ClientSocket.recv(1024)
-        print response
+        response = response.decode("UTF-8")
+        print (response)
     except:
-        print "Error: Serveri nuk ka kthyer pergjigje"
-    menu()
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
 
-def printo():
+def printo(ClientSocket):
     message = "PRINTO "
-    #message = message.encode("UTF-8")
-    ClientSocket.send(message) 
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
     try:
         response = ClientSocket.recv(1024)
-        print response
+        response = response.decode("UTF-8")
+        print (response)
     except:
-        print "Error: Serveri nuk ka kthyer pergjigje"
-    menu()
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def host(ClientSocket):
+    message = "HOST "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+ 
+def time(ClientSocket):
+    message = "TIME "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message)
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def keno(ClientSocket):
+    message = "KENO "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message)
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def faktoriel(ClientSocket):
+    message = "FAKTORIEL "
+    fakt = str(input('Kerko faktorielin e numrit: '))
+    message = message+fakt
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message)
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+def konverto(ClientSocket):
+    message = "KONVERTO "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def M1(ClientSocket):
+    message = "M1 "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def M2(ClientSocket):
+    message = "M2 "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def M3(ClientSocket):
+    message = "M3 "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def M4(ClientSocket):
+    message = "M4 "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+def M5(ClientSocket):
+    message = "M5 "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def M6(ClientSocket):
+    message = "M6 "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def M7(ClientSocket):
+    message = "M7 "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def M8(ClientSocket):
+    message = "M8 "
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+def end(ClientSocket):
+    ClientSocket.close()
+    exit()
+    
+def freestyle(ClientSocket):
+    message = str(input("Request: "))
+    message = message.encode("UTF-8")
+    dergo(ClientSocket,message) 
+    try:
+        response = ClientSocket.recv(1024)
+        response = response.decode("UTF-8")
+        print (response)
+    except:
+        print ("Error: Serveri nuk ka kthyer pergjigje")
+    menu(ClientSocket)
+  
+
+
+
+
+def menu(ClientSocket):
+    print (" ")
+    print("---------------------------")
+    print("1.OPTIONS")
+    print("2.EXIT")
+    option = str(input('Zgjedh opt Numer: '))
+    if(option == '1'):
+        print (" ")
+        print("-------------Options--------------")
+        print("1.IP")
+        print("2.PORT")
+        print("3.ZANORE")
+        print("4.PRINTO")
+        print("5.HOST")
+        print("6.TIME")
+        print("7.KENO")
+        print("8.FAKTORIEL")
+        print("9.KONVERTO")
+        print("10.FREESTYLE")
+        print("11.INDIVIDUALE")
+        print("12.EXIT")    
+        option = str(input('Zgjedh opt Numer: '))
+    
+        if(option == '1'):
+            ip(ClientSocket)
+        if(option == '2'):
+            port(ClientSocket)
+        if(option == '3'):
+            zanore(ClientSocket)
+        if(option == '4'):
+            printo(ClientSocket)
+        if(option == '5'):
+            host(ClientSocket)
+        if(option == '6'):
+            time(ClientSocket)
+        if(option == '7'):
+            keno(ClientSocket)
+        if(option == '8'):
+            faktoriel(ClientSocket)
+        if(option == '9'):
+            konverto(ClientSocket)
+        if(option == '10'):
+            freestyle(ClientSocket)
+        if(option == '11'):
+            print("--------------------")
+            print("1.Artan - M1")
+            print("2.Artan - M2")
+            print("3.Argjent - M1")
+            print("4.Argjent - M2")
+            print("5.Adriatik - M1")
+            print("6.Adriatik - M2")
+            print("7.Kaltrina - M1")
+            print("8.Kaltrina - M2")
+            option = str(input('Zgjedh opt Numer: '))
+            if(option == '1'):
+                M1(ClientSocket)
+            if(option == '2'):
+                M2(ClientSocket)
+            if(option == '3'):
+                M3(ClientSocket)
+            if(option == '4'):
+                M4(ClientSocket)
+            if(option == '5'):
+                M5(ClientSocket)
+            if(option == '6'):
+                M6(ClientSocket)
+            if(option == '7'):
+                M7(ClientSocket)
+            if(option == '8'):
+                M8(ClientSocket)
+            print ("Keni shtypur opsion jovalid")
+            menu(ClientSocket)
+        if(option == '12'):
+            end()    
+        print ("Keni shtypur opsion jovalid")
+        menu(ClientSocket)        
+    if(option == '2'):
+        end(ClientSocket)
+    print ("Keni shtypur opsion jovalid")
+    menu(ClientSocket)
+
+def dergo(ClientSocket,message):
+    try:
+        ClientSocket.send(message)
+    except:
+        print("Lidhja me server u nderpre.")
+        print("Provojmete rilidhemi...")
+        lidhu()
+
+def lidhu():
+    try:
+        ClientSocket = socket(AF_INET, SOCK_STREAM)
+        ClientSocket.connect((Ip,portS))
+        menu(ClientSocket)
+    except:
+        print("Lidhja me server deshtoi")
+             
+lidhu()        
+
+        
+    
+
+
+
+
+
 
 def host():
     message = "HOST "
