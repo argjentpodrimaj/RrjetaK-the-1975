@@ -3,7 +3,7 @@ from socket import *
 from sys import exit
 
 port=12002
-portS=12001
+portS=9000
 Ip="localhost"
 
 ClientSocket = socket(AF_INET, SOCK_DGRAM)
